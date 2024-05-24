@@ -5,7 +5,7 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import fileUpload from 'express-fileupload';
 // import userRouter from './routes/userRouter.js'
-// import { dbConnection } from './database/dbConnection.js';
+import { dbConnection } from './db/dbConnection.js';
 
 const app = express();
 dotenv.config({ path: "./config/config.env" });
@@ -31,6 +31,6 @@ app.use(
 // Routes
 // app.use('/api/v1/user', userRouter); // Mount userRouter at '/api/v1/user'
 
-// dbConnection();
+dbConnection();
 
 export default app;
