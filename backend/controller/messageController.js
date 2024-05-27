@@ -1,40 +1,17 @@
-// import {Message} from '../models/messageSchema.js';
-
-// export const sendMessage = async (req,res,next) =>{
-//   const {firstName,lastName,email,phone,message} = req.body;
-//   if(!firstName || !lastName || !email || !phone || !message){
-//     return res.status(400).json({
-//       success:true,
-//       message:"Please full fill form",
-//     });
-//   };
-
-//   await Message.create({firstName,lastName,email,phone,message});
-//   res.status(200).json({
-//     success:true,
-//     message:"Message Sent Successfully",
-//   });
-// };
-
+import { catchAsyncError } from '../middlewares/catchAsyncErrors.js';
 import { Message } from '../models/messageSchema.js';
+import ErrorHandler from '../middlewares/error.js';
 
-export const sendMessage = async (req, res, next) => {
+export const sendMessage = catchAsyncError(async (req, res, next) => {
   const { firstName, lastName, email, phone, message } = req.body;
 
   if (!firstName || !lastName || !email || !phone || !message) {
-    return res.status(400).json({
-      success: false,
-      message: "Please fill in all fields",
-    });
+    return next(new ErrorHandler("Please Fill full form!", 400))
   }
 
-  try {
-    await Message.create({ firstName, lastName, email, phone, message });
-    res.status(200).json({
-      success: true,
-      message: "Message sent successfully",
-    });
-  } catch (error) {
-    next(error); // Pass error to the next middleware (typically error handler)
-  }
-};
+  await Message.create({ firstName, lastName, email, phone, message });
+  res.status(200).json({
+    success: true,
+    message: "Message sent successfully",
+  });
+});
