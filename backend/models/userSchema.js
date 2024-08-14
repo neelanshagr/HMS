@@ -38,7 +38,7 @@ const userSchema = new mongoose.Schema({
   gender:{
     type:String,
     required:true,
-    enum:["Male , Female"]
+    enum:["Male" , "Female"],
   },
   password:{
     type:String,
@@ -49,7 +49,7 @@ const userSchema = new mongoose.Schema({
   role:{
     type:String,
     required:true,
-    enum:["Admin,Patient,Doctor"]
+    enum:["Admin","Patient","Doctor"],
   },
   doctorDepartment:{
     type:String
