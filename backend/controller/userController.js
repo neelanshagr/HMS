@@ -2,7 +2,7 @@ import {catchAsyncError} from "../middlewares/catchAsyncErrors.js";
 import { User } from "../models/userSchema.js";
 import ErrorHandler from "../middlewares/error.js";
 import { generateToken } from "../utils/jwtToken.js";
-//import { generateToken } from '../utils/jwtToken.js';
+
 
 // import cloudinary from "cloudinary";
 
@@ -67,14 +67,14 @@ export const login = catchAsyncError(async (req, res, next) => {
 });
 
 export const addNewAdmin = catchAsyncError(async (req, res, next) => {
-  const { firstName, lastName, email, phone, nic, dob, gender, password } =
+  const { firstName, lastName, email, phone, UHID, dob, gender, password } =
     req.body;
   if (
     !firstName ||
     !lastName ||
     !email ||
     !phone ||
-    !nic ||
+    !UHID ||
     !dob ||
     !gender ||
     !password
@@ -92,7 +92,7 @@ export const addNewAdmin = catchAsyncError(async (req, res, next) => {
     lastName,
     email,
     phone,
-    nic,
+    UHID,
     dob,
     gender,
     password,
@@ -104,3 +104,31 @@ export const addNewAdmin = catchAsyncError(async (req, res, next) => {
     admin,
   });
 });
+
+export const getAllDoctors = catchAsyncError(async (req, res, next) => {
+  const doctors = await User.find({ role: "Doctor" });
+  res.status(200).json({
+    success: true,
+    doctors,
+  });
+});
+
+// {
+//   "firstName":"Neelansh",
+//   "lastName":"Agrawal",
+//   "email":"Patient@gmail.com",
+//   "phone":"1234567890",
+//   "UHID":"12345678901234",
+//   "dob":"2002-07-16",
+//   "gender":"Male",
+//   "password":"12345678",
+//   "role":"Patient"
+// }
+
+
+// {
+//   "email":"Patient@gmail.com",
+//   "password":"12345678",
+//   "confirmPassword":"12345678",
+//   "role":"Patient"
+// }
