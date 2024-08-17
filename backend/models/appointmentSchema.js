@@ -24,7 +24,7 @@ const appointmentSchema = new mongoose.Schema({
     minLength: [11, "Phone Number Must Contain Exact 11 Digits!"],
     maxLength: [11, "Phone Number Must Contain Exact 11 Digits!"],
   },
-  nic: {
+  UHID: {
     type: String,
     required: [true, "NIC Is Required!"],
     minLength: [13, "NIC Must Contain Only 13 Digits!"],
