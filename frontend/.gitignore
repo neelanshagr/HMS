@@ -6,7 +6,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-App.css
+src/App.css
 node_modules
 dist
 dist-ssr
