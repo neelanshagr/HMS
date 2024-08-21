@@ -277,23 +277,67 @@ h6 {
   }
 }
 
-.message-form {
-  position: relative;
-}
+/* Form Component Container */
 
+
+/* Form Header */
 .message-form h2 {
-  text-align: center;
-  color: #0078a8;
-  position: relative;
+  font-size: 24px;
+  color: #0077b6; /* Deep Sky Blue */
+  margin-bottom: 20px;
 }
 
-.message-form img {
-  position: absolute;
-  top: 0;
-  right: -16%;
-  height: 600px;
-  z-index: -1;
+/* Input Fields */
+.message-form input[type="text"],
+.message-form input[type="number"],
+.message-form textarea {
+  width: calc(50% - 10px);
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #b0e0e6; /* Powder Blue */
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #f0f8ff; /* Alice Blue */
 }
+
+.message-form textarea {
+  width: calc(100% - 20px);
+  resize: none;
+}
+
+/* Button */
+.message-form button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #0077b6; /* Deep Sky Blue */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.message-form button[type="submit"]:hover {
+  background-color: #005f99; /* Slightly darker blue */
+}
+
+/* Form Layout */
+.message-form form > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.message-form form > div:nth-child(3) {
+  justify-content: center;
+}
+
+/* Image */
+.message-form img {
+  margin-top: 20px;
+  width: 100px;
+  height: auto;
+}
+
 
 @media (max-width: 700px) {
   .message-form img {
@@ -368,52 +412,129 @@ footer .content div:last-child div svg {
   font-size: 24px;
 }
 
+/* Departments Container */
 .departments {
   padding-top: 30px;
   padding-bottom: 50px;
-  background-color: #f4f7f6;
+  background-color: #f0f8ff; /* Alice Blue background */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
 }
 
+/* Departments Heading */
 .departments h2 {
-  color: #0078a8;
+  color: #004a75; /* Darker Blue */
   margin-bottom: 30px;
+  font-size: 28px;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+  .departments {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    margin: 10px;
+  }
+
+  .departments h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .departments {
+    padding-top: 15px;
+    padding-bottom: 30px;
+  }
+
+  .departments h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+}
+
+/* Card Container */
 .card {
   position: relative;
-  border-radius: 8px;
+  border-radius: 12px;
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding-bottom: 15px;
-  padding-left: 10px;
-  padding-right: 20px;
+  padding: 15px 20px;
   min-height: 360px;
-  margin: 0 10px;
+  margin: 10px;
   text-decoration: none;
-  background-color: #ffffff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #f0f8ff; /* Alice Blue */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card .image {
+/* Card Hover Effect */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Image */
+.card img {
   position: absolute;
-  right: -10px;
-  top: -10px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  border-radius: 12px;
+  object-fit: cover;
+  filter: brightness(85%);
 }
 
-.card .image img {
-  height: 350px;
+/* Department Name */
+.card .depart-name {
+  margin-bottom: 30px;
+  background: rgba(173, 216, 230, 0.9); /* Light Blue with transparency */
+  width: 320px;
+  font-size: 24px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 30px;
+  height: fit-content;
+  font-weight: 700;
+  color: #004a75; /* Darker blue for text */
 }
 
-.card p {
-  font-size: 22px;
-  font-weight: 600;
-  color: #0078a8;
-}
-
-@media (max-width: 700px) {
+/* Responsive Design */
+@media (max-width: 768px) {
   .card {
     min-height: 300px;
+    margin: 10px 5px;
+  }
+
+  .card .depart-name {
+    width: 90%;
+    font-size: 20px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    flex-direction: column;
+    min-height: 250px;
+    padding: 10px;
+  }
+
+  .card .depart-name {
+    width: 100%;
+    font-size: 18px;
+    padding: 8px;
+    margin-bottom: 20px;
   }
 }
