@@ -58,7 +58,9 @@ const Register = () => {
       <div className="register-form">
         <h2 className="register-title">Sign Up</h2>
         <p className="register-subtitle">Please Sign Up To Continue</p>
-        
+        <p className="signup-description">
+          Welcome to the Hospital Management System (HMS) Patient Portal! To access your personal health information and manage appointments, please provide some information about you.
+        </p>
         <form onSubmit={handleRegistration}>
           <div className="register-form-fields">
             <input
