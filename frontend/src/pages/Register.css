@@ -1,0 +1,92 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('waiting_room.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-color: rgba(255, 192, 203, 0.2);
+  padding-top: 100px;
+  position: relative;
+}
+
+.register-form {
+  background: rgba(255, 235, 235, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 100%;
+  max-width: 600px; 
+  margin: 0 auto;
+}
+
+.register-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.register-form-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.register-input {
+  border: 1px solid rgba(221, 221, 221, 0.8);
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  flex: 1 1 calc(50% - 10px);
+  box-sizing: border-box;
+}
+
+.register-button {
+  background: linear-gradient(135deg, rgba(0, 77, 109, 0.9), rgba(0, 120, 168, 0.9));
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.register-footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .register-container {
+      padding-top: 120px;
+  }
+
+  .register-form {
+      padding: 20px;
+      width: 95%;
+  }
+
+  .register-input {
+      margin-bottom: 15px;
+      flex: 1 1 100%;
+  }
+
+  .register-footer {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .register-footer-text {
+      margin-bottom: 15px;
+  }
+
+  .register-button {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+}
