@@ -1,0 +1,193 @@
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background: #ffffff; /* White background */
+    border-bottom: 2px solid #004d6d; /* Dark blue border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar .logo img {
+    height: 50px; /* Adjust height as needed */
+  }
+  
+  .navbar .navLinks {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navbar .navLinks .links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar .navLinks .links a {
+    text-decoration: none;
+    color: #004d6d; /* Dark blue */
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar .navLinks .links a:hover {
+    color: #0078a8; /* Medium blue */
+  }
+  
+  .navbar .btn {
+    padding: 10px 20px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #004d6d, #0078a8); /* Blue gradient */
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .navbar .btn:hover {
+    background: linear-gradient(135deg, #0078a8, #004d6d); /* Reversed gradient on hover */
+    transform: scale(1.05);
+  }
+  
+  .navbar .hamburger {
+    display: none;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 15px;
+    }
+    .navbar .navLinks {
+      display: none; /* Hide links by default on mobile */
+      flex-direction: column;
+      position: absolute;
+      top: 60px; /* Adjust as needed */
+      right: 0;
+      width: 100%;
+      background: #ffffff; /* Match navbar background */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .navbar .navLinks.showmenu {
+      display: flex; /* Show menu when active */
+    }
+    .navbar .hamburger {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  }
+  
+  /* Mobile menu items */
+  .navbar .navLinks .links {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .navbar .navLinks .links a {
+    margin-bottom: 15px;
+  }
+  
+  /* Make navbar responsive to smaller screens */
+  @media (max-width: 500px) {
+    .navbar .navLinks.showmenu {
+      width: 100%;
+    }
+  }
+  
+  /* Login page styles */
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0faff; /* Light blue background */
+    padding-top: 60px; /* Offset for fixed navbar */
+  }
+  
+  .login-form {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .login-title {
+    font-size: 2rem;
+    color: #004d6d; /* Dark blue */
+    margin-bottom: 10px;
+  }
+  
+  .login-subtitle {
+    font-size: 1.1rem;
+    color: #0078a8; /* Medium blue */
+    margin-bottom: 20px;
+  }
+  
+  .login-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .login-form-fields {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-input {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+  }
+  
+  .login-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .login-footer-text {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .login-register-link {
+    text-decoration: none;
+    color: #004d6d; /* Dark blue */
+    font-weight: 600;
+  }
+  
+  .login-button {
+    background: linear-gradient(135deg, #004d6d, #0078a8); /* Blue gradient */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .login-button:hover {
+    background: linear-gradient(135deg, #0078a8, #004d6d); /* Reversed gradient on hover */
+  }
+  

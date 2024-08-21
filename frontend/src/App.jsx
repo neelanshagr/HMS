@@ -1,5 +1,6 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import './App.css'
+import { useContext, useEffect } from 'react'
 import Home from './pages/Home'
 import Appointment from './pages/Appointment'
 import Login from './pages/Login'
@@ -8,8 +9,33 @@ import About from './pages/About'
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './components/Navbar'
+import axios from "axios";
+import { Context } from "./main";
 
 const App = () => {
+  const { isAuthenticated, setIsAuthenticated, setUser } =
+    useContext(Context);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:4002/api/v1/user/patient/me",
+          {
+            withCredentials: true,
+          }
+        );
+        setIsAuthenticated(true);
+        setUser(response.data.user);
+      } catch (error) {
+        setIsAuthenticated(false);
+        setUser({});
+      }
+    };
+    fetchUser();
+  }, [isAuthenticated]);
+
+
   return (
     <>
       <Router>
