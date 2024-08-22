@@ -1,0 +1,67 @@
+.form-component {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    background-color: #f9d8e6;
+  }
+  
+  .form-component h2 {
+    color: #4a4a4a;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .form-component form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .form-component form label {
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 10px);
+    font-size: 16px;
+    color: #4a4a4a;
+  }
+  
+  .form-component form input,
+  .form-component form select,
+  .form-component form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #b0bec5;
+    background-color: #ffffff;
+    margin-top: 5px;
+  }
+  
+  .form-component form input[type="date"] {
+    color: #4a4a4a;
+  }
+  
+  .align-center {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .form-component button {
+    padding: 10px 25px;
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    background: linear-gradient(140deg, #0078a8, #004d6d);
+    margin: 0 auto;
+    display: block;
+  }
+  

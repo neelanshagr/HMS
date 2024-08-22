@@ -3,6 +3,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import '../Forms.css'
 
 const MessageForm = () => {
   const [firstName, setFirstName] = useState("");
