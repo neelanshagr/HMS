@@ -11,6 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './components/Navbar'
 import axios from "axios";
 import { Context } from "./main";
+import Footer from './components/Footer'
 
 const App = () => {
   const { isAuthenticated, setIsAuthenticated, setUser } =
@@ -27,7 +28,7 @@ const App = () => {
         );
         setIsAuthenticated(true);
         setUser(response.data.user);
-      } catch (error) {
+      } catch (e) {
         setIsAuthenticated(false);
         setUser({});
       }
@@ -48,6 +49,7 @@ const App = () => {
           <Route path="/register" element={<Register/>}></Route>
         </Routes>
         <ToastContainer position='top-center'></ToastContainer>
+        <Footer/>
       </Router>
     </>
   )
