@@ -28,7 +28,7 @@ const App = () => {
         );
         setIsAuthenticated(true);
         setUser(response.data.user);
-      } catch (e) {
+      } catch{
         setIsAuthenticated(false);
         setUser({});
       }
