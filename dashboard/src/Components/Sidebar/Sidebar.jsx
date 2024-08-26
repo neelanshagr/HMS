@@ -35,31 +35,32 @@ const Sidebar = () => {
 
   const gotoHomePage = () => {
     navigateTo("/");
-    setShow(!show);
+    setShow(false);
   };
   const gotoDoctorsPage = () => {
     navigateTo("/doctors");
-    setShow(!show);
+    setShow(false);
   };
   const gotoMessagesPage = () => {
     navigateTo("/messages");
-    setShow(!show);
+    setShow(false);
   };
   const gotoAddNewDoctor = () => {
     navigateTo("/doctor/addnew");
-    setShow(!show);
+    setShow(false);
   };
   const gotoAddNewAdmin = () => {
     navigateTo("/admin/addnew");
-    setShow(!show);
+    setShow(false);
   };
+
+  if (!isAuthenticated) {
+    return null; // Hide the entire sidebar component if not authenticated
+  }
 
   return (
     <>
-      <nav
-        style={!isAuthenticated ? { display: "none" } : { display: "flex" }}
-        className={show ? "show sidebar" : "sidebar"}
-      >
+      <nav className={show ? "show sidebar" : "sidebar"}>
         <div className="links">
           <TiHome onClick={gotoHomePage} />
           <FaUserDoctor onClick={gotoDoctorsPage} />
@@ -69,10 +70,7 @@ const Sidebar = () => {
           <RiLogoutBoxFill onClick={handleLogout} />
         </div>
       </nav>
-      <div
-        className="wrapper"
-        style={isAuthenticated ? { display: "none" } : { display: "flex" }}
-      >
+      <div className="wrapper">
         <GiHamburgerMenu className="hamburger" onClick={() => setShow(!show)} />
       </div>
     </>

@@ -1,0 +1,103 @@
+/* Container for the login form */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+/* Logo styling */
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+/* Form title */
+.form-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Form input styling */
+form {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input[type="text"],
+input[type="password"] {
+  padding: 12px;  /* Ensure consistent padding for all inputs */
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;  /* Ensure padding doesn't affect width */
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+  font-size: 1rem;  /* Consistent font size for placeholders */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #1abc9c;
+}
+
+/* Button styling */
+button {
+  padding: 12px;
+  background-color: #1abc9c;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-container input {
+  padding-right: 40px;  /* Add space for the icon */
+}
+
+.password-container span {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  color: #666;
+}
+
+button:hover {
+  background-color: #16a085;
+}
+
+/* Additional text */
+p {
+  margin-bottom: 20px;
+  color: #666;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .form-title {
+    font-size: 1.2rem;
+  }
+}
