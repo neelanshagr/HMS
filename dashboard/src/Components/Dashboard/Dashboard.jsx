@@ -9,6 +9,7 @@ import './Dashboard.css'
 
 const Dashboard = () => {
   const [appointments, setAppointments] = useState([]);
+  const [doctor, setDoctor] = useState([]);
 
   useEffect(() => {
     const fetchAppointments = async () => {
@@ -23,7 +24,22 @@ const Dashboard = () => {
         setAppointments([]);
       }
     };
+
+    const fetchDoctors = async()=>{
+      try{
+        const {docData} = await axios.get(
+          "http://localhost:4002/api/v1/user/doctors",
+          {withCredentials: true}
+        );
+        setDoctor(docData.doctors);
+      } catch (error){
+        console.log(error);
+        setDoctor([]);
+      }
+    }
+
     fetchAppointments();
+    fetchDoctors();
   }, []);
 
   const handleUpdateStatus = async (appointmentId, status) => {
@@ -72,11 +88,11 @@ const Dashboard = () => {
           </div>
           <div className="secondBox">
             <p>Total Appointments</p>
-            <h3>1500</h3>
+            <h3>{appointments.length}</h3>
           </div>
           <div className="thirdBox">
             <p>Registered Doctors</p>
-            <h3>10</h3>
+            <h3>{doctor.length}</h3>
           </div>
         </div>
         <div className="banner">

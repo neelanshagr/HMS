@@ -53,7 +53,7 @@ const Doctors = () => {
                     Department: <span>{element.doctorDepartment}</span>
                   </p>
                   <p>
-                    NIC: <span>{element.nic}</span>
+                    UHID: <span>{element.UHID}</span>
                   </p>
                   <p>
                     Gender: <span>{element.gender}</span>
