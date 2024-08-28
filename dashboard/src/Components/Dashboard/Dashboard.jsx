@@ -1,10 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+import  { useContext, useEffect, useState } from "react";
 import { Context } from "../../main";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { GoCheckCircleFill } from "react-icons/go";
 import { AiFillCloseCircle } from "react-icons/ai";
+import './Dashboard.css'
 
 const Dashboard = () => {
   const [appointments, setAppointments] = useState([]);
@@ -18,6 +19,7 @@ const Dashboard = () => {
         );
         setAppointments(data.appointments);
       } catch (error) {
+        console.log(error);
         setAppointments([]);
       }
     };
@@ -64,9 +66,7 @@ const Dashboard = () => {
                 </h5>
               </div>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Facilis, nam molestias. Eaque molestiae ipsam commodi neque.
-                Assumenda repellendus necessitatibus itaque.
+              Welcome back! As a key leader in ensuring our hospital runs smoothly, your dashboard is your command center. Here, you can effortlessly manage appointments, oversee the performance of our dedicated doctors, and stay informed on the latest updates. Let’s make today another successful day in advancing our healthcare mission!
               </p>
             </div>
           </div>

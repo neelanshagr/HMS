@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Login from "./Components/Login/Login";
@@ -11,7 +11,8 @@ import axios from "axios";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Sidebar from "./Components/Sidebar/Sidebar";
-import "./App.css";
+import './App.css'
+
 
 const App = () => {
   const { setIsAuthenticated, setAdmin } = useContext(Context);
@@ -26,6 +27,7 @@ const App = () => {
         setIsAuthenticated(true);
         setAdmin(response.data.user);
       } catch (error) {
+        console.log(error)
         setIsAuthenticated(false);
         setAdmin(null); // Set to null instead of an empty object for better null checks
       }

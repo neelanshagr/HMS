@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import  { useContext, useState } from "react";
 import { TiHome } from "react-icons/ti";
 import { RiLogoutBoxFill } from "react-icons/ri";
 import { AiFillMessage } from "react-icons/ai";
@@ -10,7 +10,6 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { Context } from "../../main";
 import { useNavigate } from "react-router-dom";
-import "./sidebar.css";  // Import the CSS file
 
 const Sidebar = () => {
   const [show, setShow] = useState(false);
@@ -62,12 +61,12 @@ const Sidebar = () => {
     <>
       <nav className={show ? "show sidebar" : "sidebar"}>
         <div className="links">
-          <TiHome onClick={gotoHomePage} />
-          <FaUserDoctor onClick={gotoDoctorsPage} />
-          <MdAddModerator onClick={gotoAddNewAdmin} />
-          <IoPersonAddSharp onClick={gotoAddNewDoctor} />
-          <AiFillMessage onClick={gotoMessagesPage} />
-          <RiLogoutBoxFill onClick={handleLogout} />
+          <TiHome onClick={gotoHomePage} className="sidebar-icon" />
+          <FaUserDoctor onClick={gotoDoctorsPage} className="sidebar-icon" />
+          <MdAddModerator onClick={gotoAddNewAdmin} className="sidebar-icon" />
+          <IoPersonAddSharp onClick={gotoAddNewDoctor} className="sidebar-icon" />
+          <AiFillMessage onClick={gotoMessagesPage} className="sidebar-icon" />
+          <RiLogoutBoxFill onClick={handleLogout} className="sidebar-icon" />
         </div>
       </nav>
       <div className="wrapper">
