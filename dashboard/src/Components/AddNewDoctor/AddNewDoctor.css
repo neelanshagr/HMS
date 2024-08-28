@@ -1,0 +1,154 @@
+/* Importing the font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Apply styles only to the AddNewDoctor component */
+.add-doctor-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure it covers full viewport height */
+  background-color: #d3ebf1; /* Light background color for the page */
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.add-doctor-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px; /* Increased max width for wider container */
+  padding: 20px;
+  background-color: #d3ebf1; /* Background color for the form container */
+   /* Hide overflow to maintain rounded corners */
+}
+
+.add-doctor-logo {
+  width: 80px; /* Set a specific width for the logo */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 20px;
+}
+
+.add-doctor-form-title {
+  font-size: 1.75rem;
+  color: #0078a8;
+  margin-bottom: 20px; /* Reduced margin-bottom */
+  text-align: center;
+}
+
+.add-doctor-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Increased gap between form elements */
+}
+
+.add-doctor-form img {
+  width: 150px; /* Set a specific width for the doctor avatar */
+  height: 150px; /* Set a specific height */
+  border-radius: 50%; /* Circular avatar */
+  object-fit: cover;
+  margin-bottom: 20px; /* Add space below the avatar */
+}
+
+.add-doctor-form input[type="text"],
+.add-doctor-form input[type="number"],
+.add-doctor-form input[type="date"],
+.add-doctor-form select,
+.add-doctor-form input[type="password"] {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #b0bec5;
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  margin-bottom: 10px; /* Add space below each input */
+}
+
+.add-doctor-form select {
+  padding: 12px;
+}
+
+.add-doctor-form input[type="text"]::placeholder,
+.add-doctor-form input[type="number"]::placeholder,
+.add-doctor-form input[type="date"]::placeholder,
+.add-doctor-form input[type="password"]::placeholder {
+  font-size: 1rem;
+}
+
+.add-doctor-form input:focus,
+.add-doctor-form select:focus {
+  border-color: #1abc9c;
+}
+
+.add-doctor-button {
+  padding: 12px;
+  background: linear-gradient(140deg, #0078a8, #004d6d);
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+  width: 100%; /* Full width for the button */
+}
+
+.add-doctor-button:hover {
+  background-color: #16a085;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .add-doctor-container {
+    padding: 15px;
+    max-width: 700px; /* Adjusted max width for medium screens */
+  }
+
+  .add-doctor-form-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .add-doctor-form input[type="text"],
+  .add-doctor-form input[type="number"],
+  .add-doctor-form input[type="date"],
+  .add-doctor-form select,
+  .add-doctor-form input[type="password"] {
+    font-size: 14px;
+  }
+
+  .add-doctor-button {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .add-doctor-container {
+    padding: 10px;
+    max-width: 100%; /* Full width for smaller screens */
+  }
+
+  .add-doctor-logo {
+    width: 50px; /* Adjust logo size for smaller screens */
+  }
+
+  .add-doctor-form-title {
+    font-size: 1.25rem;
+  }
+
+  .add-doctor-form input[type="text"],
+  .add-doctor-form input[type="number"],
+  .add-doctor-form input[type="date"],
+  .add-doctor-form select,
+  .add-doctor-form input[type="password"] {
+    font-size: 12px;
+  }
+
+  .add-doctor-button {
+    font-size: 14px;
+  }
+}

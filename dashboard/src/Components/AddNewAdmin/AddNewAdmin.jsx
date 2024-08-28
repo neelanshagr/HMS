@@ -1,8 +1,9 @@
-import React, { useContext, useState } from "react";
+import  { useContext, useState } from "react";
 import { Context } from "../../main";
 import { Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
+import './AddNewAdmin.css'
 
 const AddNewAdmin = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
@@ -89,7 +90,7 @@ const AddNewAdmin = () => {
           <div>
             <input
               type="number"
-              placeholder="NIC"
+              placeholder="UHID"
               value={nic}
               onChange={(e) => setNic(e.target.value)}
             />

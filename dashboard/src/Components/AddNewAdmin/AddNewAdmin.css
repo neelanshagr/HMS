@@ -1,0 +1,136 @@
+/* AddNewAdmin.css */
+.add-admin-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 0 50px;
+    background-color: #d3ebf1; /* Matching the color used in Login form */
+  }
+  
+  .add-admin-form .logo {
+    width: 60px; /* Adjusted logo size */
+    margin-bottom: 20px;
+  }
+  
+  .add-admin-form .form-title {
+    font-size: 1.75rem; /* Font size for the form title */
+    color: #0078a8; /* Matching the color used in Login form */
+    margin-bottom: 30px;
+  }
+  
+  .add-admin-form form {
+    width: 100%;
+    max-width: 550px; /* Maximum width of the form */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Gap between form elements */
+  }
+  
+  .add-admin-form input[type="text"],
+  .add-admin-form input[type="number"],
+  .add-admin-form input[type="date"],
+  .add-admin-form select,
+  .add-admin-form input[type="password"] {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 1px solid #b0bec5;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #ffffff;
+  }
+  
+  .add-admin-form input[type="text"]::placeholder,
+  .add-admin-form input[type="number"]::placeholder,
+  .add-admin-form input[type="date"]::placeholder,
+  .add-admin-form select::placeholder,
+  .add-admin-form input[type="password"]::placeholder {
+    font-size: 1rem;
+  }
+  
+  .add-admin-form input[type="text"]:focus,
+  .add-admin-form input[type="number"]:focus,
+  .add-admin-form input[type="date"]:focus,
+  .add-admin-form select:focus,
+  .add-admin-form input[type="password"]:focus {
+    border-color: #1abc9c;
+  }
+  
+  .add-admin-form button {
+    padding: 12px 30px;
+    background: linear-gradient(140deg, #0078a8, #004d6d);
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+    width: 100%; /* Full width for the button */
+  }
+  
+  .add-admin-form button:hover {
+    background-color: #16a085;
+  }
+  
+  .add-admin-form select {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 1px solid #b0bec5;
+    border-radius: 5px;
+    background-color: #ffffff;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .add-admin-form {
+      padding: 0 30px;
+    }
+  
+    .add-admin-form .form-title {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+  
+    .add-admin-form form {
+      max-width: 450px;
+      gap: 15px;
+    }
+  
+    .add-admin-form input[type="text"],
+    .add-admin-form input[type="number"],
+    .add-admin-form input[type="date"],
+    .add-admin-form select,
+    .add-admin-form input[type="password"],
+    .add-admin-form button {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .add-admin-form {
+      padding: 0 20px;
+    }
+  
+    .add-admin-form .form-title {
+      font-size: 1.25rem;
+    }
+  
+    .add-admin-form form {
+      max-width: 100%;
+    }
+  
+    .add-admin-form input[type="text"],
+    .add-admin-form input[type="number"],
+    .add-admin-form input[type="date"],
+    .add-admin-form select,
+    .add-admin-form input[type="password"],
+    .add-admin-form button {
+      font-size: 12px;
+      padding: 10px 15px;
+    }
+  }
+  

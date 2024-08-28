@@ -1,9 +1,9 @@
-
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Context } from "../../main";
 import axios from "axios";
+import './AddNewDoctor.css'
 
 const AddNewDoctor = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
@@ -85,11 +85,11 @@ const AddNewDoctor = () => {
     return <Navigate to={"/login"} />;
   }
   return (
-    <section className="page">
-      <section className="container add-doctor-form">
-        <img src="/logo.png" alt="logo" className="logo"/>
-        <h1 className="form-title">REGISTER A NEW DOCTOR</h1>
-        <form onSubmit={handleAddNewDoctor}>
+    <section className="add-doctor-page">
+      <section className="add-doctor-container">
+        <img src="/logo.png" alt="logo" className="add-doctor-logo"/>
+        <h1 className="add-doctor-form-title">REGISTER A NEW DOCTOR</h1>
+        <form className="add-doctor-form" onSubmit={handleAddNewDoctor}>
           <div className="first-wrapper">
             <div>
               <img
@@ -127,12 +127,12 @@ const AddNewDoctor = () => {
               />
               <input
                 type="number"
-                placeholder="NIC"
+                placeholder="UHID"
                 value={nic}
                 onChange={(e) => setNic(e.target.value)}
               />
               <input
-                type={"date"}
+                type="date"
                 placeholder="Date of Birth"
                 value={dob}
                 onChange={(e) => setDob(e.target.value)}
@@ -166,7 +166,7 @@ const AddNewDoctor = () => {
                   );
                 })}
               </select>
-              <button type="submit">Register New Doctor</button>
+              <button type="submit" className="add-doctor-button">Register New Doctor</button>
             </div>
           </div>
         </form>
