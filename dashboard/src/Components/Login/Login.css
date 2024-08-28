@@ -1,67 +1,72 @@
-/* Container for the login form */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f4f7f6;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #f4f4f4;
-  padding: 20px;
+  padding: 0 100px;
+  background-color: #d3ebf1; /* Updated background color */
 }
 
-/* Logo styling */
+@media (max-width: 700px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
 .logo {
   width: 100px;
   margin-bottom: 20px;
 }
 
-/* Form title */
 .form-title {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #333;
+  font-size: 1.75rem; /* Increased font size */
+  color: #0078a8;
+  margin-bottom: 30px; /* Adjusted margin */
 }
 
-/* Form input styling */
 form {
   width: 100%;
-  max-width: 400px;
+  max-width: 550px; /* Increased max width */
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 25px; /* Adjusted gap */
 }
 
 input[type="text"],
 input[type="password"] {
-  padding: 12px;  /* Ensure consistent padding for all inputs */
-  font-size: 1rem;
-  border: 1px solid #ccc;
+  padding: 12px 35px; /* Updated padding */
+  font-size: 20px; /* Increased font size */
+  border: 1px solid #b0bec5;
   border-radius: 5px;
   outline: none;
   width: 100%;
-  box-sizing: border-box;  /* Ensure padding doesn't affect width */
+  box-sizing: border-box;
+  background-color: #ffffff; /* Added background color */
 }
 
 input[type="text"]::placeholder,
 input[type="password"]::placeholder {
-  font-size: 1rem;  /* Consistent font size for placeholders */
+  font-size: 1rem;
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus {
   border-color: #1abc9c;
-}
-
-/* Button styling */
-button {
-  padding: 12px;
-  background-color: #1abc9c;
-  color: white;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .password-container {
@@ -71,7 +76,7 @@ button {
 }
 
 .password-container input {
-  padding-right: 40px;  /* Add space for the icon */
+  padding-right: 40px;
 }
 
 .password-container span {
@@ -81,23 +86,24 @@ button {
   color: #666;
 }
 
+button {
+  padding: 12px 30px; /* Adjusted padding */
+  background: linear-gradient(140deg, #0078a8, #004d6d); /* Updated background color */
+  color: white;
+  font-size: 22px; /* Increased font size */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+}
+
 button:hover {
   background-color: #16a085;
 }
 
-/* Additional text */
 p {
   margin-bottom: 20px;
   color: #666;
   text-align: center;
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding: 10px;
-  }
-
-  .form-title {
-    font-size: 1.2rem;
-  }
 }
