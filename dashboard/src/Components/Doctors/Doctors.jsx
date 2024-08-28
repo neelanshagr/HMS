@@ -1,8 +1,9 @@
 import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { Context } from "../../main";
 import { Navigate } from "react-router-dom";
+import './Doctors.css'
 
 const Doctors = () => {
   const [doctors, setDoctors] = useState([]);

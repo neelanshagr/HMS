@@ -12,7 +12,7 @@ const AddNewDoctor = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [nic, setNic] = useState("");
+  const [UHID, setUHID] = useState("");
   const [dob, setDob] = useState("");
   const [gender, setGender] = useState("");
   const [password, setPassword] = useState("");
@@ -53,7 +53,7 @@ const AddNewDoctor = () => {
       formData.append("email", email);
       formData.append("phone", phone);
       formData.append("password", password);
-      formData.append("nic", nic);
+      formData.append("UHID", UHID);
       formData.append("dob", dob);
       formData.append("gender", gender);
       formData.append("doctorDepartment", doctorDepartment);
@@ -71,7 +71,7 @@ const AddNewDoctor = () => {
           setLastName("");
           setEmail("");
           setPhone("");
-          setNic("");
+          setUHID("");
           setDob("");
           setGender("");
           setPassword("");
@@ -128,8 +128,8 @@ const AddNewDoctor = () => {
               <input
                 type="number"
                 placeholder="UHID"
-                value={nic}
-                onChange={(e) => setNic(e.target.value)}
+                value={UHID}
+                onChange={(e) => setUHID(e.target.value)}
               />
               <input
                 type="date"
